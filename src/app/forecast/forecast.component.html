@@ -1,0 +1,18 @@
+<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()" >
+  <input type="text" formControlName="forecastCity">
+  <button>Submit</button>
+</form>
+<div class="container">
+  <div class = "day" *ngFor="let day of cityForecast">
+      <h2>{{day.day | date:'MMMM d'}}</h2>
+      <div class ="icon">
+        <img src="http://openweathermap.org/img/w/{{day.icon}}.png">
+      </div>
+      <div class="temp">
+        <h3>{{day.tempMax}}&deg;</h3>
+        <h3>{{day.tempMin}}&deg;</h3>
+      </div>
+  </div>
+  
+  </div>
+  
